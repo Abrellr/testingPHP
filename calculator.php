@@ -12,61 +12,34 @@
 
 <body>
     <div class="container fluid">
-        <form method="GET" action="calculator.php">
-            <p>ANGKA 1</p>
+        <form method="GET" action="calc_process.php">
+            <p>NUMBER 1</p>
             <input type="text" name="numOne">
             </input>
-            <p>ANGKA 2</p>
+            <p>NUMBER 2</p>
             <input type="text" name="numTwo">
             </input>
             <br />
-            <div class="form-group">
-                <label for="sel1">Operasi:</label>
+            <div class="form-group" style="width: 100px">
+                <label for="sel1">Operator:</label>
                 <select name="operator" class="form-control" id="sel1">
                     <option name="operator" value="add">+</option>
                     <option name="operator" value="substract">-</option>
                     <option name="operator" value="divide">:</option>
-                    <option name="operator" value="multipy">x</option>
+                    <option name="operator" value="multiply">x</option>
                 </select>
         </form>
-        <p>HASIL:
+        <p>RESULT:
             <?php
-            if (isset($_GET['submit']) && ($_GET['numOne'] != '') || ($_GET['numTwo'] != '')) {
-            }
-            if (is_numeric($_GET['numOne']) && is_numeric($_GET['numTwo'])) {
-                compute();
-            }
-
-            function compute()
-            {
-                $a = ($_GET['numOne']);
-                $b = ($_GET['numTwo']);
-                $mathOp = ($_GET['operator']);
-                switch ($mathOp) {
-                    case "add";
-                        $res = $a + $b;
-                        echo $res;
-                        break;
-                    case "substract";
-                        $res = $a - $b;
-                        echo $res;
-                        break;
-                    case "divide";
-                        $res = $a / $b;
-                        echo $res;
-                        break;
-                    case "multiply";
-                        $res = $a * $b;
-                        echo  $res;
-                        break;
-                }
-            }
+            echo $_GET['result'] ?? NULL;
             ?>
         </p>
-        <button type="submit" class="btn btn-primary">HITUNG</button>
-        <button href="calculator.php" class="btn btn-primary">RESET</button>
-
+        <?php echo $_GET['error'] ?? NULL;
+        ?>
+        <button type="submit" class="btn btn-primary">COUNT</button>
     </div>
+    <a href="calculator.php" class="btn btn-primary">RESET</a>
+
     <!-- Bootstrap script !-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
