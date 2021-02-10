@@ -12,6 +12,7 @@
 
 <body>
     <div class="container fluid">
+        <!--separating the function in another file-->
         <form method="GET" action="calc_process.php">
             <p>NUMBER 1</p>
             <input type="text" name="numOne">
@@ -29,6 +30,7 @@
                     <option name="operator" value="multiply">x</option>
                 </select>
         </form>
+        <!-- Using ternary operation *from PHP 7 upwards* to render result and error -->
         <p>RESULT:
             <?php
             echo $_GET['result'] ?? NULL;
@@ -38,7 +40,8 @@
         ?>
         <button type="submit" class="btn btn-primary">COUNT</button>
     </div>
-    <a href="calculator.php" class="btn btn-primary">RESET</a>
+    <!-- reset function is set as <a> and not button. !-->
+    <a type="reset" href="calculator.php" class="btn btn-primary">RESET</a>
 
     <!-- Bootstrap script !-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
