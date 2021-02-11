@@ -15,7 +15,7 @@
         <!--separating the function in another file-->
         <form method="GET" action="calc_process.php">
             <p>NUMBER 1</p>
-            <input type="text" name="numOne">
+            <input type="text" name="numOne" value="<?= $_GET['result'] ?? "" ?>">
             </input>
             <p>NUMBER 2</p>
             <input type="text" name="numTwo">
@@ -24,10 +24,10 @@
             <div class="form-group" style="width: 100px">
                 <label for="sel1">Operator:</label>
                 <select name="operator" class="form-control" id="sel1">
-                    <option name="operator" value="add">+</option>
-                    <option name="operator" value="substract">-</option>
-                    <option name="operator" value="divide">:</option>
-                    <option name="operator" value="multiply">x</option>
+                    <option value="add">+</option>
+                    <option value="substract">-</option>
+                    <option value="divide">:</option>
+                    <option value="multiply">x</option>
                 </select>
         </form>
         <!-- Using ternary operation *from PHP 7 upwards* to render result and error -->
