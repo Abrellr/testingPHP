@@ -1,13 +1,15 @@
 <?php
-
+//the validation starts when one input is isset/born
 if (isset($_GET['numOne'])) {
+    //error handling: if any input form is empty, throw error
     if ($_GET['numOne'] == '' || $_GET['numTwo'] == '') {
         header("Location: calculator.php?error=Error! input is empty");
+        //only calculate if both numbers are numeric and are submitted
     } else if (is_numeric($_GET['numOne']) && is_numeric($_GET['numTwo'])) {
-        $submited = true;
         compute();
+        //if not numeric, throw error
     } else {
-        header("Location: calculator.php?error=Error! input is not a number");;
+        header("Location: calculator.php?error=Error! input is not a number");
     }
 }
 
