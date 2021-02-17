@@ -14,6 +14,8 @@
         <input type="text" name="name">
         <p>Email</p>
         <input type="text" name="email">
+        <p>Password</p>
+        <input type="text" name="password">
         <button type="submit">Register</button>
     </form>
 
